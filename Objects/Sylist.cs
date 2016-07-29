@@ -36,14 +36,14 @@ namespace HairSalon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("SELECT * FROM tasks;", conn);
+      SqlCommand cmd = new SqlCommand("SELECT * FROM stylists;", conn);
       SqlDataReader rdr = cmd.ExecuteReader();
 
       while(rdr.Read())
       {
-        int taskId = rdr.GetInt32(0);
-        string taskName = rdr.GetString(1);
-        Stylist newStylist = new Stylist(taskName, taskId);
+        int stylistId = rdr.GetInt32(0);
+        string stylistName = rdr.GetString(1);
+        Stylist newStylist = new Stylist(stylistName, stylistId);
         allStylists.Add(newStylist);
       }
 
@@ -57,6 +57,15 @@ namespace HairSalon
       }
 
       return allStylists;
+    }
+
+    public static void DeleteAll()
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+      SqlCommand cmd = new SqlCommand("DELETE FROM stylists;", conn);
+      cmd.ExecuteNonQuery();
+      conn.Close();
     }
   }
 }
