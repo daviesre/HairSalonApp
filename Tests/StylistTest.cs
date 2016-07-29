@@ -23,7 +23,7 @@ namespace HairSalon
     }
 
     [Fact]
-    public void Equals_Equal_ReturnsTrueIfDescriptionsAreTheSame()
+    public void Equals_Equal_ReturnsTrueIfNamesAreTheSame()
     {
       //Arrange, Act
       Stylist newStylist1 = new Stylist("Nancy Razor");
@@ -61,7 +61,7 @@ namespace HairSalon
     }
 
     [Fact]
-    public void Test_Find_FindsTaskInDatabase()
+    public void Test_Find_FindsStylistInDatabase()
     {
       //Arrange
       Stylist testStylist = new Stylist("Nancy Razor");
