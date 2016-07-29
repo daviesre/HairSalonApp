@@ -37,8 +37,9 @@ namespace HairSalon
       else
       {
         Stylist newStylist = (Stylist) otherStylist;
+        bool idEquality = (this.GetId() == newStylist.GetId());
         bool nameEquality = (this.GetName() == newStylist.GetName());
-        return (nameEquality);
+        return (idEquality && nameEquality);
       }
     }
     //Other Methods
@@ -97,6 +98,7 @@ namespace HairSalon
       {
         conn.Close();
       }
+
     }
 
     public static void DeleteAll()
