@@ -28,6 +28,19 @@ namespace HairSalon
     {
       _name = newName;
     }
+    public override bool Equals(System.Object otherStylist)
+    {
+      if (!(otherStylist is Stylist))
+      {
+        return false;
+      }
+      else
+      {
+        Stylist newStylist = (Stylist) otherStylist;
+        bool nameEquality = (this.GetName() == newStylist.GetName());
+        return (nameEquality);
+      }
+    }
     //Other Methods
     public static List<Stylist> GetAll()
     {
@@ -59,18 +72,9 @@ namespace HairSalon
       return allStylists;
     }
 
-    public override bool Equals(System.Object otherStylist)
+    public void Save()
     {
-      if (!(otherStylist is Stylist))
-      {
-        return false;
-      }
-      else
-      {
-        Stylist newStylist = (Stylist) otherStylist;
-        bool nameEquality = (this.GetName() == newStylist.GetName());
-        return (nameEquality);
-      }
+      //TODO
     }
 
     public static void DeleteAll()
