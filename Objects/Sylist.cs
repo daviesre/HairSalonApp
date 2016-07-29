@@ -59,6 +59,20 @@ namespace HairSalon
       return allStylists;
     }
 
+    public override bool Equals(System.Object otherStylist)
+    {
+      if (!(otherStylist is Stylist))
+      {
+        return false;
+      }
+      else
+      {
+        Stylist newStylist = (Stylist) otherStylist;
+        bool nameEquality = (this.GetName() == newStylist.GetName());
+        return (nameEquality);
+      }
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();
