@@ -27,7 +27,7 @@ namespace HairSalon
     {
       //Arrange, Act
       Stylist newStylist1 = new Stylist("Nancy Razor");
-      Stylist newStylist2 = new Stylist("Nancy Razors");
+      Stylist newStylist2 = new Stylist("Nancy Razor");
       //Assert
       Assert.Equal(newStylist1, newStylist2);
     }
