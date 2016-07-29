@@ -66,14 +66,10 @@ namespace HairSalon
       //Arrange
       Stylist testStylist = new Stylist("Nancy Razor");
       testStylist.Save();
-      Stylist testStylist2 = new Stylist("Nancy Razors");
-      testStylist.Save();
-
       //Act
       Stylist foundStylist = Stylist.Find(testStylist.GetId());
-
       //Assert
-      Assert.Equal(testStylist2, foundStylist);
+      Assert.Equal(testStylist, foundStylist);
     }
 
     public void Dispose()
