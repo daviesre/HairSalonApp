@@ -26,30 +26,17 @@ namespace HairSalon
     public void Equals_Equal_ReturnsTrueIfNamesAreTheSame()
     {
       //Arrange, Act
-      Client newClient1 = new Client("Ms. Client");
-      Client newClient2 = new Client("Ms. Client");
+      Client newClient1 = new Client("Ima Client", 1);
+      Client newClient2 = new Client("Ima Client", 1);
       //Assert
       Assert.Equal(newClient1, newClient2);
     }
 
     [Fact]
-    public void Test_Save_SavesToDatabase()
+    public void Test_SaveAssignsIdToObject()
     {
       //Arrange
-      Client testClient = new Client("Ms. Client");
-      //Act
-      testClient.Save();
-      List<Client> result = Client.GetAll();
-      List<Client> testList = new List<Client>{testClient};
-      //Assert
-      Assert.Equal(testList, result);
-    }
-
-    [Fact]
-    public void Test_Save_AssignsIdToObject()
-    {
-      //Arrange
-      Client testClient = new Client("Ms. Client");
+      Client testClient = new Client("Ima Client", 1);
       //Act
       testClient.Save();
       Client savedClient = Client.GetAll()[0];
@@ -61,10 +48,10 @@ namespace HairSalon
     }
 
     [Fact]
-    public void Test_Find_FindsTaskInDatabase()
+    public void Test_Find_FindsClientInDatabase()
     {
       //Arrange
-      Client testClient = new Client("Ms. Client");
+      Client testClient = new Client("Ima Client", 1);
       testClient.Save();
       //Act
       Client foundClient = Client.Find(testClient.GetId());
