@@ -19,7 +19,7 @@ namespace HairSalon
      //Arrange, Act
      int result = Client.GetAll().Count;
      //Assert
-     Assert.Equal(0, result);
+     Assert.Equal(1, result);
     }
 
     [Fact]
