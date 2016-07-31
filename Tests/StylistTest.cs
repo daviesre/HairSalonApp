@@ -73,23 +73,40 @@ namespace HairSalon
     }
 
     [Fact]
-  public void Test_GetClients_RetrievesAllClientsWithStylist()
-  {
-    //Arrange
-    Stylist testStylist = new Stylist("Nancy Razor");
-    testStylist.Save();
+    public void Test_GetClients_RetrievesAllClientsWithStylist()
+    {
+      //Arrange
+      Stylist testStylist = new Stylist("Nancy Razor");
+      testStylist.Save();
 
-    //Act
-    Client firstClient = new Client("Ima Client", testStylist.GetId());
-    firstClient.Save();
-    Client secondClient = new Client("Ada Lovelace", testStylist.GetId());
-    secondClient.Save();
+      //Act
+      Client firstClient = new Client("Ima Client", testStylist.GetId());
+      firstClient.Save();
+      Client secondClient = new Client("Ada Lovelace", testStylist.GetId());
+      secondClient.Save();
 
-    List<Client> testClientList = new List<Client> {firstClient, secondClient};
-    List<Client> resultClientList = testStylist.GetClients();
-    //Assert
-    Assert.Equal(testClientList, resultClientList);
-  }
+      List<Client> testClientList = new List<Client> {firstClient, secondClient};
+      List<Client> resultClientList = testStylist.GetClients();
+      //Assert
+      Assert.Equal(testClientList, resultClientList);
+    }
+
+    [Fact]
+    public void Test_Update_UpdatesStylistInDatabase()
+    {
+      //Arrange
+      string name = "Nancy Razor";
+      Stylist testStylist = new Stylist(name);
+      testStylist.Save();
+      string newName = "Ima Stylist";
+      string newName2 = "Ima Notta Stylist";
+      //Act
+      testStylist.Update(newName);
+
+      string result = testStylist.GetName();
+      //Assert
+      Assert.Equal(newName2, result);
+    }
 
     public void Dispose()
     {
