@@ -13,15 +13,16 @@ This site will allow the user to add new stylists to a list and view their clien
  1. Clone this repository
  2. Run "DNU restore" on PowerShell in the cloned repository.
  3. Put the following into SQL Studio:
- * CREATE DATABASE hair_salon;
- * GO
- * USE hair_salon;
- * GO
- * CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255), stylist_id INT);
- * CREATE TABLE clients (id INT IDENTITY(1,1), description VARCHAR(255));
- * GO
- 4. Then type in "DNX Kestrel" and enter.
- 5. Go to your web browser and type in "LocalHost:5004" to view the homepage.
+CREATE DATABASE hair_salon;
+GO
+USE hair_salon;
+GO
+CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255), stylist_id INT);
+CREATE TABLE clients (id INT IDENTITY(1,1), description VARCHAR(255));
+GO
+ 4. Repeat these same steps except change any instance of "hair_salon" to "hair_salon_test"
+ 5. Then type in "DNX Kestrel" and enter.
+ 6. Go to your web browser and type in "LocalHost:5004" to view the homepage.
 
 ## Known Bugs
 No known bugs
