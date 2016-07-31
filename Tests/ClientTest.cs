@@ -53,8 +53,10 @@ namespace HairSalon
       //Arrange
       Client testClient = new Client("Ima Client", 1);
       testClient.Save();
+      Client testClient2 = new Client("Ima Notta Client", 1);
+      testClient.Save();
       //Act
-      Client foundClient = Client.Find(testClient.GetId());
+      Client foundClient = Client.Find(testClient2.GetId());
       //Assert
       Assert.Equal(testClient, foundClient);
     }
