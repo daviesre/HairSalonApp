@@ -99,13 +99,12 @@ namespace HairSalon
       Stylist testStylist = new Stylist(name);
       testStylist.Save();
       string newName = "Ima Stylist";
-      string newName2 = "Ima Notta Stylist";
       //Act
       testStylist.Update(newName);
 
       string result = testStylist.GetName();
       //Assert
-      Assert.Equal(newName2, result);
+      Assert.Equal(newName, result);
     }
 
     public void Dispose()
