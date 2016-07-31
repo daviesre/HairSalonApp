@@ -39,7 +39,7 @@ namespace HairSalon
       Client testClient = new Client("Ima Client", 1);
       //Act
       testClient.Save();
-      Client savedClient = Client.GetAll()[1];
+      Client savedClient = Client.GetAll()[0];
 
       int result = savedClient.GetId();
       int testId = testClient.GetId();
