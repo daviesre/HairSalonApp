@@ -203,6 +203,11 @@ namespace HairSalon
       }
     }
 
+    public void Delete()
+    {
+    //TODO
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();
