@@ -11,7 +11,7 @@ namespace HairSalon
   {
     public static class DBConfiguration
     {
-      public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=good_food;Integrated Security=SSPI;";
+      public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon;Integrated Security=SSPI;";
     }
     public void Configure(IApplicationBuilder app)
     {

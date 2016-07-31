@@ -1,1 +1,18 @@
-<h1>Test</h1>
+<h1>Hair Salon App</h1>
+
+<h4>Add a new Stylist below</h4>
+
+<form action="/stylist/new" method="post">
+  <label for="stylist-name">Stylist name</label>
+  <input name="stylist-name" type="text">
+  <button type="submit">Add</button>
+</form>
+
+@if (Model.Count != 0)
+{
+  foreach(var stylist in Model)
+  {
+    <h3>Stylist: @stylist.GetName()</h3>
+
+  }
+}

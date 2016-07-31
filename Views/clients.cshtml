@@ -1,0 +1,33 @@
+@if (@Model.Count == 0)
+{
+  <p>No clients have been added.</p>
+}
+else
+{
+  <h1>Here is a list of clients:</h1>
+  <ul>
+    @foreach (var client in Model)
+    {
+      <li>@client.GetName()</li>
+    }
+  </ul>
+  <form action="/" method="post">
+    <button type="submit">Clear all tasks</button>
+  </form>
+}
+
+<h1>Add a new client</h1>
+<form action="/clients" method="post">
+  <label for="name">Client Name:</label>
+  <input id="name" name="name" type="text">
+  <select name="stylist-id">
+    @foreach (var stylist in Model)
+    {
+      <option value="@stylist.GetId()">@stylist.GetName()</option>
+    }
+  </select>
+  <button type="submit">Add new client</button>
+</form>
+
+
+<p><a href="/">Return home</a></p>
